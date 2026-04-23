@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Riddle Challenge</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      max-width: 600px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 15px;
+      width: 60%;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Riddle Me This</h2>
+    <p>
+      I stand through seasons, tall and strong,<br>
+      With scented wood that lasts so long.<br>
+      Moths and time I help repel,<br>
+      In chests and closets I dwell.<br><br>
+      What am I?
+    </p>
+
+    <input type="text" id="answer" placeholder="Type your answer...">
+    <button onclick="checkAnswer()">Submit</button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById('answer').value.trim().toLowerCase();
+      const result = document.getElementById('result');
+
+      if (input === 'cedar') {
+        result.textContent = `Correct! Your coordinates for December are:
+
+FF: 1,7,10,11,14,15,17,19,22,26,29,31
+GG: 1,2,3,4,5,6,7,9,10,12,14,18,25,26,28,32`;
+      } else {
+        result.textContent = 'Incorrect. Try again.';
+      }
+    }
+  </script>
+</body>
+</html>
